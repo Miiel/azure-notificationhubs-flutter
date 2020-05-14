@@ -5,6 +5,9 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url "https://dl.bintray.com/microsoftazuremobile/SDK"
+        }
     }
 
     dependencies {
@@ -16,6 +19,9 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "https://dl.bintray.com/microsoftazuremobile/SDK"
+        }
     }
 }
 

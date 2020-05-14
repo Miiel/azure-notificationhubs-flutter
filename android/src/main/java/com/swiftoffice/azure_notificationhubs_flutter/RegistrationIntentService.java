@@ -51,28 +51,32 @@ public class RegistrationIntentService extends IntentService {
             String[] tags = {
                 "device:" + sha1
             };
-            NotificationSettings nhSettings = new NotificationSettings(getApplicationContext());
-            if (((regID = sharedPreferences.getString("registrationID", null)) == null)) {
-                NotificationHub hub = new NotificationHub(nhSettings.getHubName(),
-                        nhSettings.getHubConnectionString(), this);
-                regID = hub.register(FCM_token, tags).getRegistrationId();
-                resultString = "New NH Registration Successfully - RegId : " + regID;
-                Log.d(TAG, resultString);
-                sharedPreferences.edit().putString("registrationID", regID).apply();
-                sharedPreferences.edit().putString("FCMtoken", FCM_token).apply();
-            }
 
-            // Check to see if the token has been compromised and needs refreshing.
-            else if ((sharedPreferences.getString("FCMtoken", "")) != FCM_token) {
-                NotificationHub hub = new NotificationHub(nhSettings.getHubName(),
-                        nhSettings.getHubConnectionString(), this);
-                regID = hub.register(FCM_token, tags).getRegistrationId();
-                resultString = "New NH Registration Successfully - RegId : " + regID;
-                Log.d(TAG, resultString);
-                sharedPreferences.edit().putString("registrationID", regID).apply();
-                sharedPreferences.edit().putString("FCMtoken", FCM_token).apply();
-            } else {
-                resultString = "Previously Registered Successfully - RegId : " + regID;
+            // disabled because we want to register it ourselves
+            if (false) {
+                NotificationSettings nhSettings = new NotificationSettings(getApplicationContext());
+                if (((regID = sharedPreferences.getString("registrationID", null)) == null)) {
+                    NotificationHub hub = new NotificationHub(nhSettings.getHubName(),
+                            nhSettings.getHubConnectionString(), this);
+                    regID = hub.register(FCM_token, tags).getRegistrationId();
+                    resultString = "New NH Registration Successfully - RegId : " + regID;
+                    Log.d(TAG, resultString);
+                    sharedPreferences.edit().putString("registrationID", regID).apply();
+                    sharedPreferences.edit().putString("FCMtoken", FCM_token).apply();
+                }
+
+                // Check to see if the token has been compromised and needs refreshing.
+                else if ((sharedPreferences.getString("FCMtoken", "")) != FCM_token) {
+                    NotificationHub hub = new NotificationHub(nhSettings.getHubName(),
+                            nhSettings.getHubConnectionString(), this);
+                    regID = hub.register(FCM_token, tags).getRegistrationId();
+                    resultString = "New NH Registration Successfully - RegId : " + regID;
+                    Log.d(TAG, resultString);
+                    sharedPreferences.edit().putString("registrationID", regID).apply();
+                    sharedPreferences.edit().putString("FCMtoken", FCM_token).apply();
+                } else {
+                    resultString = "Previously Registered Successfully - RegId : " + regID;
+                }
             }
             Intent tIntent = new Intent(NotificationService.ACTION_TOKEN);
             tIntent.putExtra(NotificationService.EXTRA_TOKEN, "device:" + sha1);

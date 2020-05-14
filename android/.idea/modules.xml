@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/android-azure_notificationhubs_flutter.iml" filepath="$PROJECT_DIR$/android-azure_notificationhubs_flutter.iml" group="azure_notificationhubs_flutter" />
       <module fileurl="file://$PROJECT_DIR$/azure_notificationhubs_flutter.iml" filepath="$PROJECT_DIR$/azure_notificationhubs_flutter.iml" />
     </modules>
   </component>
