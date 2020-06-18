@@ -79,7 +79,7 @@ public class RegistrationIntentService extends IntentService {
                 }
             }
             Intent tIntent = new Intent(NotificationService.ACTION_TOKEN);
-            tIntent.putExtra(NotificationService.EXTRA_TOKEN, "device:" + sha1);
+            tIntent.putExtra(NotificationService.EXTRA_TOKEN, FCM_token);
             LocalBroadcastManager.getInstance(this).sendBroadcast(tIntent);
         } catch (Exception e) {
             Log.e(TAG, resultString = "Failed to complete registration", e);
