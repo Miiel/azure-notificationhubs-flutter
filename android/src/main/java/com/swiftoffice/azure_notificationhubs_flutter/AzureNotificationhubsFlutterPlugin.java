@@ -91,6 +91,7 @@ public class AzureNotificationhubsFlutterPlugin extends BroadcastReceiver implem
     }
 
 
-
-
+    public void notificationClicked() {
+        channel.invokeMethod("notificationClicked", null);
+    }
 }

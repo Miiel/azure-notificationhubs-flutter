@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22dbf12f-0378-45c6-822a-c0ca81ee1ef5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/android/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/swiftoffice/azure_notificationhubs_flutter/RegistrationIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/swiftoffice/azure_notificationhubs_flutter/RegistrationIntentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/azure_notificationhubs_flutter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/azure_notificationhubs_flutter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/swiftoffice/azure_notificationhubs_flutter/AzureNotificationhubsFlutterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/swiftoffice/azure_notificationhubs_flutter/AzureNotificationhubsFlutterPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/swiftoffice/azure_notificationhubs_flutter/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/swiftoffice/azure_notificationhubs_flutter/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/azure_notificationhubs_flutter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/azure_notificationhubs_flutter.dart" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,9 +15,9 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_27" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -47,18 +35,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -85,5 +61,23 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="23" width="3404" height="1417" key="CommitChangelistDialog2" timestamp="1599139608095">
+      <screen x="0" y="23" width="3404" height="1417" />
+    </state>
+    <state x="0" y="23" width="3404" height="1417" key="CommitChangelistDialog2/-1440.1054.1440.877/0.23.3404.1417@0.23.3404.1417" timestamp="1599139608095" />
+    <state x="0" y="23" width="3404" height="1417" key="DiffContextDialog" timestamp="1599139607657">
+      <screen x="0" y="23" width="3404" height="1417" />
+    </state>
+    <state x="0" y="23" width="3404" height="1417" key="DiffContextDialog/-1440.1054.1440.877/0.23.3404.1417@0.23.3404.1417" timestamp="1599139607657" />
+    <state x="2333" y="655" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599139363819">
+      <screen x="0" y="23" width="3404" height="1417" />
+    </state>
+    <state x="2333" y="655" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1440.1054.1440.877/0.23.3404.1417@0.23.3404.1417" timestamp="1599139363819" />
+    <state x="2218" y="348" width="670" height="676" key="search.everywhere.popup" timestamp="1599139403314">
+      <screen x="0" y="23" width="3404" height="1417" />
+    </state>
+    <state x="2218" y="348" width="670" height="676" key="search.everywhere.popup/-1440.1054.1440.877/0.23.3404.1417@0.23.3404.1417" timestamp="1599139403314" />
   </component>
 </project>

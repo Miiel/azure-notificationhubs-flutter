@@ -13,17 +13,20 @@ class AzureNotificationhubsFlutter {
   MessageHandler _onMessage;
   MessageHandler _onResume;
   MessageHandler _onLaunch;
+  MessageHandler _notificationClicked;
   TokenHandler _onToken;
 
   /// Sets up [MessageHandler] for incoming messages.
   void configure({
     MessageHandler onMessage,
     MessageHandler onResume,
+    MessageHandler onNotificationClicked,
     MessageHandler onLaunch,
     TokenHandler onToken
   }) {
     _onMessage = onMessage;
     _onLaunch = onLaunch;
+    _notificationClicked = onNotificationClicked;
     _onResume = onResume;
     _onToken = onToken;
     _channel.setMethodCallHandler(_handleMethod);
@@ -34,6 +37,8 @@ class AzureNotificationhubsFlutter {
     switch (call.method) {
       case "onToken":
         return _onToken(call.arguments);
+      case "notificationClicked":
+        return _notificationClicked(call.arguments);
       case "onMessage":
         if (Platform.isAndroid) {
           Map<String, dynamic> args = Map<String, dynamic>.from(call.arguments);

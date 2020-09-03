@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -52,6 +53,7 @@ public class NotificationService extends FirebaseMessagingService {
     }
 
     private void sendNotification(Map<String, Object> content) {
+        Log.d("BOOY", "NOTIFICIONAASSDN WESN!");
         ctx = getApplicationContext();
         Class mainActivity;
         try {
@@ -60,25 +62,26 @@ public class NotificationService extends FirebaseMessagingService {
             String activityName = launchIntent.getComponent().getClassName();
             mainActivity = Class.forName(activityName);
             Intent intent = new Intent(ctx, mainActivity);
+            intent.putExtra("isNotification", true);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             mNotificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
             PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
-                intent, PendingIntent.FLAG_ONE_SHOT);
+                    intent, PendingIntent.FLAG_ONE_SHOT);
             Resources resources = ctx.getPackageManager().getResourcesForApplication(packageName);
             int resId = resources.getIdentifier("ic_launcher", "mipmap", packageName);
             Drawable icon = resources.getDrawable(resId);
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(
                     ctx,
                     NOTIFICATION_CHANNEL_ID)
-                .setContentTitle(((Map) content.get("data")).get("title").toString())
-                .setContentText(((Map) content.get("data")).get("body").toString())
-                .setDefaults(DEFAULT_SOUND | DEFAULT_VIBRATE | DEFAULT_ALL)
-                .setPriority(PRIORITY_HIGH)
-                .setSmallIcon(R.drawable.ic_menu_manage)
-                .setLargeIcon(BitmapFactory.decodeResource(resources, resId))
-                .setContentIntent(contentIntent)
-                .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
-                .setAutoCancel(true);
+                    .setContentTitle(((Map) content.get("data")).get("title").toString())
+                    .setContentText(((Map) content.get("data")).get("body").toString())
+                    .setDefaults(DEFAULT_SOUND | DEFAULT_VIBRATE | DEFAULT_ALL)
+                    .setPriority(PRIORITY_HIGH)
+                    .setSmallIcon(R.drawable.ic_menu_manage)
+                    .setLargeIcon(BitmapFactory.decodeResource(resources, resId))
+                    .setContentIntent(contentIntent)
+                    .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
+                    .setAutoCancel(true);
             int m = (int)((new Date().getTime() / 1000L) % Integer.MAX_VALUE);
             mNotificationManager.notify(m, notificationBuilder.build());
         } catch (Exception e) {
@@ -90,9 +93,9 @@ public class NotificationService extends FirebaseMessagingService {
         ctx = context;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
-                NOTIFICATION_CHANNEL_ID,
-                NOTIFICATION_CHANNEL_NAME,
-                NotificationManager.IMPORTANCE_HIGH);
+                    NOTIFICATION_CHANNEL_ID,
+                    NOTIFICATION_CHANNEL_NAME,
+                    NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription(NOTIFICATION_CHANNEL_DESCRIPTION);
             channel.enableVibration(true);
             NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
