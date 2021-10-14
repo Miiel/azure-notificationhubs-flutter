@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:azure_notificationhubs_flutter/azure_notificationhubs_flutter.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,21 +9,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-  AzureNotificationhubsFlutter _anh;
+  AzureNotificationhubsFlutter _anh = AzureNotificationhubsFlutter();
 
   @override
   void initState() {
     super.initState();
     _anh.configure(
-      onLaunch: (Map<String, dynamic> notification) async {
+      onLaunch: (notification) async {
         print('onLaunch: $notification');
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
             content: ListTile(
-            title: Text(notification['data']['title']),
-            subtitle: Text(notification['data']['body']),
+              title: Text(notification!['data']['title']),
+              subtitle: Text(notification['data']['body']),
             ),
             actions: <Widget>[
               FlatButton(
@@ -34,13 +33,13 @@ class _MyAppState extends State<MyApp> {
           ),
         );
       },
-      onResume: (Map<String, dynamic> notification) async {
+      onResume: (notification) async {
         print('onResume: $notification');
       },
-      onMessage: (Map<String, dynamic> notification) async {
+      onMessage: (notification) async {
         print('onMessage: $notification');
       },
-      onToken: (String token) async {
+      onToken: (token) async {
         print('onToken: $token');
       },
     );
