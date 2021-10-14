@@ -4,5 +4,8 @@
 .packages
 .pub/
 
+.idea/
+android/.idea
+
 build/
 example/android/app/google-services.json
