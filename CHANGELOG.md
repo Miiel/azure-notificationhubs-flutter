@@ -1,3 +1,6 @@
-## 0.0.1
+##1.0.0
+- Removed .idea folders from git
+- Null safety
 
-* Initial release
+## 0.0.1
+- Initial release
